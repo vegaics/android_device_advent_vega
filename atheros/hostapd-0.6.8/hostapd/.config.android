@@ -1,0 +1,14 @@
+# Driver interface for ATHEROS-AR600x driver
+
+CONFIG_DRIVER_AR6000=y
+AR6K_ROOT=$(WORKAREA)
+L_CFLAGS += -I$(AR6K_ROOT)/include
+L_CFLAGS += -I$(AR6K_ROOT)/host/include
+L_CFLAGS += -I$(AR6K_ROOT)/host/os/linux/include
+L_CFLAGS += -I$(AR6K_ROOT)/host/wlan/include
+
+HOSTAPD_VER=-0.6.8
+CONFIG_EAP=y
+CONFIG_WPS=y
+CONFIG_WPS_UPNP=y
+

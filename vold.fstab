@@ -1,0 +1,25 @@
+#######################
+## Regular device mount
+##
+## Format: dev_mount <label> <mount_point> <part> <sysfs_path1...>
+## label        - Label for the volume
+## mount_point  - Where the volume will be mounted
+## part         - Partition # (1 based), or 'auto' for first usable partition.
+## <sysfs_path> - List of sysfs paths to source devices
+######################
+
+# Mounts the first usable partition of the specified device
+dev_mount sdcard /mnt/sdcard auto /devices/platform/sdhci-tegra.3/mmc_host/mmc3
+
+# Not sure what this is used for
+dev_mount system_usb /mnt/usb/system_usb auto /devices/platform/tegra-ehci.0/usb
+
+# Dock usb ports
+dev_mount usb0 /mnt/usb/usb0 auto /devices/platform/tegra-ehci.2/usb0
+dev_mount usb1 /mnt/usb/usb1 auto /devices/platform/tegra-ehci.2/usb1
+dev_mount usb2 /mnt/usb/usb2 auto /devices/platform/tegra-ehci.2/usb2
+dev_mount usb3 /mnt/usb/usb3 auto /devices/platform/tegra-ehci.2/usb3
+
+# Usb host mode
+dev_mount usbdisk /mnt/usbdisk auto /devices/platform/tegra-ehci
+
