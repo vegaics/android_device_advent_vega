@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=wingray
-DEVICEDIR=stingray
-MANUFACTURER=moto
+DEVICE=vega
+DEVICEDIR=vega
+MANUFACTURER=advent
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICEDIR
 

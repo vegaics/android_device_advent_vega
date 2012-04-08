@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/moto/wingray/device_base.mk)
+$(call inherit-product, device/advent/vega/device_base.mk)
 
 # Add commands which are wingray specific after here

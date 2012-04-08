@@ -1,4 +1,4 @@
-import init.stingray.usb.rc
+import init.vega.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug

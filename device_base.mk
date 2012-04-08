@@ -15,7 +15,7 @@
 #
 
 DEVICE_PACKAGE_OVERLAYS := \
-    device/moto/wingray/overlay
+    device/advent/vega/overlay
 
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
@@ -28,9 +28,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 include frameworks/base/build/tablet-dalvik-heap.mk
 
 PRODUCT_COPY_FILES += \
-    device/moto/wingray/init.stingray.rc:root/init.stingray.rc \
-    device/moto/wingray/init.stingray.usb.rc:root/init.stingray.usb.rc \
-    device/moto/wingray/ueventd.stingray.rc:root/ueventd.stingray.rc \
+    device/advent/vega/init.vega.rc:root/init.vega.rc \
+    device/advent/vega/init.vega.usb.rc:root/init.vega.usb.rc \
+    device/advent/vega/ueventd.vega.rc:root/ueventd.vega.rc \
 
 ifneq ($(TARGET_PREBUILT_WIFI_MODULE),)
 PRODUCT_COPY_FILES += \
@@ -60,12 +60,12 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 PRODUCT_COPY_FILES += \
-        device/moto/wingray/vold.fstab:system/etc/vold.fstab \
-        device/moto/wingray/qtouch-touchscreen.idc:system/usr/idc/qtouch-touchscreen.idc \
-        device/moto/wingray/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
-        device/moto/wingray/cpcap-key.kcm:system/usr/keychars/cpcap-key.kcm \
-        device/moto/wingray/stingray-keypad.kl:system/usr/keylayout/stingray-keypad.kl \
-        device/moto/wingray/stingray-keypad.kcm:system/usr/keychars/stingray-keypad.kcm
+        device/advent/vega/vold.fstab:system/etc/vold.fstab \
+        device/advent/vega/qtouch-touchscreen.idc:system/usr/idc/qtouch-touchscreen.idc \
+        device/advent/vega/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
+        device/advent/vega/cpcap-key.kcm:system/usr/keychars/cpcap-key.kcm \
+        device/advent/vega/vega-keypad.kl:system/usr/keylayout/vega-keypad.kl \
+        device/advent/vega/vega-keypad.kcm:system/usr/keychars/vega-keypad.kcm
 
 PRODUCT_PACKAGES := \
     camera.tegra \
@@ -93,17 +93,17 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/moto/wingray/media_profiles.xml:system/etc/media_profiles.xml
+    device/advent/vega/media_profiles.xml:system/etc/media_profiles.xml
 
 # Bluetooth config file
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.nonsmartphone.conf:system/etc/bluetooth/main.conf \
 
 # inherit from the non-open-source side, if present
-ifneq ($(filter trygon trygon_l10n calgon full_stingray tyranid stingray,$(TARGET_PRODUCT)),)
-$(call inherit-product-if-exists, vendor/moto/stingray/stingray-vendor.mk)
+ifneq ($(filter trygon trygon_l10n calgon full_vega tyranid vega,$(TARGET_PRODUCT)),)
+$(call inherit-product-if-exists, vendor/advent/vega/vega-vendor.mk)
 else
-$(call inherit-product-if-exists, vendor/moto/stingray/wingray-vendor.mk)
+$(call inherit-product-if-exists, vendor/advent/vega/vega-vendor.mk)
 endif
 
 WIFI_BAND := 802_11_ABG

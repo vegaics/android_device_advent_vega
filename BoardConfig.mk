@@ -38,7 +38,7 @@ SMALLER_FONT_FOOTPRINT := true
 
 # inherit from the proprietary version
 # needed for BP-flashing updater extensions
--include vendor/moto/stingray/BoardConfigVendor.mk
+-include vendor/advent/vega/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := tegra
 
@@ -82,7 +82,7 @@ BOARD_USES_GENERIC_AUDIO := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_GPS := true
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/moto/wingray/egl.cfg
+BOARD_EGL_CFG := device/advent/vega/egl.cfg
 BOARD_HDMI_MIRROR_MODE := Scale
 BOARD_USES_OVERLAY := true
 
@@ -92,7 +92,7 @@ ifneq ($(HAVE_NVIDIA_PROP_SRC),false)
 -include vendor/nvidia/build/definitions.mk
 endif
 
-TARGET_RECOVERY_UI_LIB := librecovery_ui_stingray
+TARGET_RECOVERY_UI_LIB := librecovery_ui_vega
 TARGET_RECOVERY_PRE_COMMAND := "setrecovery boot-recovery recovery"
 
 # Avoid the generation of ldrcc instructions
